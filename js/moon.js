@@ -3,7 +3,7 @@
   function getData(){
     const xmlhttp = new XMLHttpRequest();
     // xmlhttp.open('GET','moon.xml');
-    xmlhttp.open('GET','http://labs.bitmeister.jp/ohakon/api/?mode=moon_age&year=2015&month=8&day=30');
+    xmlhttp.open('GET','https://labs.bitmeister.jp/ohakon/api/?mode=moon_age&year=2015&month=8&day=30');
     xmlhttp.send();
 
     xmlhttp.onreadystatechange = function(){
