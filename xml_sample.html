@@ -6,7 +6,7 @@
 </head>
 <body>
   <input id="Button_Get" type="button" value="取得"" />
-  <div>受信情報3</div>
+  <div>受信情報4</div>
   <div id="output"></div>
   
    <script type="text/javascript">
@@ -23,17 +23,17 @@
             elem.innerHTML += "----- getElementsByTagName -----<br/>";
             var docelem = xmlhttp.responseXML.documentElement;
             var nodes = docelem.getElementsByTagName("name");
-            for (i = 0; i < nodes.length; i++) {
+            for (let i = 0; i < nodes.length; i++) {
               elem.innerHTML += nodes[i].tagName + ":" + nodes[i].textContent + "<br/>";
             }
 
             var nodes = docelem.getElementsByTagName("height");
-            for (i = 0; i < nodes.length; i++) {
+            for (let i = 0; i < nodes.length; i++) {
               elem.innerHTML += nodes[i].tagName + ":" + nodes[i].textContent + "<br/>";
             }
 
             var nodes = docelem.getElementsByTagName("weight");
-            for (i = 0; i < nodes.length; i++) {
+            for (let i = 0; i < nodes.length; i++) {
               elem.innerHTML += nodes[i].tagName + ":" + nodes[i].textContent + "<br/>";
             }
             elem.innerHTML += "----------<br/>";
