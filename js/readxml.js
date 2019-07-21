@@ -1,41 +1,44 @@
 'use strict';
 {
 
+//https://www.ipentec.com/document/javascript-xml-parsing
+function getData() {
+  var xmlhttp = new XMLHttpRequest();
 
-  function getData(){
-    const xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (xmlhttp.readyState == 4) {
+      if (xmlhttp.status == 200) {
+        var elem = document.getElementById("output");
 
-
-    xmlhttp.onreadystatechange = function(){
-      if( xmlhttp.readyStates != 4){
-        console.log('readyStates != 40');
-        return;
-      }else{
-        if( xmlhttp.status != 200){
-          console.log('xmlhttp.status != 200');
-          return;
+        elem.innerHTML += "----- getElementsByTagName -----<br/>";
+        var docelem = xmlhttp.responseXML.documentElement;
+        var nodes = docelem.getElementsByTagName("name");
+        for (let i = 0; i < nodes.length; i++) {
+          elem.innerHTML += nodes[i].tagName + ":" + nodes[i].textContent + "<br/>";
         }
-      }
-      //ここから通常時の処理
-      
-      console.log('readyStates OK');
-      const output = document.getElementById('output');
-      let innerHTML;
-      const docelem = xmlhttp.responseXML.documentElement;
-      const name = docelem.getElementsByTagName('name');
-      for(let i=0 ; i<name.length ; i++){
-        output.innerHTML =  output.innerHTML + name[i].tagName + ':' + name[i].textContent + '<br>';
+
+        var nodes = docelem.getElementsByTagName("height");
+        for (let i = 0; i < nodes.length; i++) {
+          elem.innerHTML += nodes[i].tagName + ":" + nodes[i].textContent + "<br/>";
+        }
+
+        var nodes = docelem.getElementsByTagName("weight");
+        for (let i = 0; i < nodes.length; i++) {
+          elem.innerHTML += nodes[i].tagName + ":" + nodes[i].textContent + "<br/>";
+        }
+        elem.innerHTML += "----------<br/>";
+      } else {
+        alert("status = " + xmlhttp.status);
       }
     }
-    
-    
-    xmlhttp.open('GET','sample.xml');
-    xmlhttp.send();
   }
+  xmlhttp.open("GET", "sample.xml");
+  xmlhttp.send();
+}
 
   const btn = document.getElementById('btn');
   btn.addEventListener('click',()=>{
-    console.log('on');
+    console.log('on1');
     getData();
   });
 
