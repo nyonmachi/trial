@@ -19,6 +19,8 @@
         }
       }
       //ここから通常時の処理
+      
+      console.log('readyStates OK');
       const output = document.getElementById('output');
       let innerHTML;
       const docelem = xmlhttp.responseXML.documentElement;
