@@ -194,7 +194,7 @@
     ctx.fill();
 
     flowerCount++;
-    timerId = setTimeout(draw_flowers,100);
+    timerId = setTimeout(draw_flowers,500);
   }
 
   function init(){
