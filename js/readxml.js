@@ -10,11 +10,11 @@
 
     xmlhttp.onreadystatechange = function(){
       if( xmlhttp.readyStates != 4){
-        console.log('readyStates !== 4');
+        console.log('readyStates != 4');
         return;
       }else{
         if( xmlhttp.status != 200){
-          console.log('xmlhttp.status !== 200');
+          console.log('xmlhttp.status != 200');
           return;
         }
       }
