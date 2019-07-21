@@ -5,6 +5,9 @@
   function getData(){
     const xmlhttp = new XMLHttpRequest();
 
+    xmlhttp.open('GET','sample.xml');
+    xmlhttp.send();
+
     xmlhttp.onreadystatechange = function(){
       if (xmlhttp.readyState === 4) {
         if (xmlhttp.status === 200) {
@@ -21,16 +24,13 @@
         elem.innerHTML =  elem.innerHTML + name[i].tagName + ':' + name[i].textContent + '<br>';
       }
     }
-
-    xmlhttp.open('GET','sample.xml');
-    xmlhttp.send();
   }
   }
 }
 
   const btn = document.getElementById('btn');
   btn.addEventListener('click',()=>{
-    console.log('on5');
+    console.log('on6');
     getData();
   });
 
