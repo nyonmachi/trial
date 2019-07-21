@@ -9,9 +9,9 @@
       req.send(null); // HTTPリクエストの発行
 
       // レスポンスが返ってきたらconvertCSVtoArray()を呼ぶ
-      req.onload = function(){
-  	convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
-      }
+    //   req.onload = function(){
+  	// convertCSVtoArray(req.responseText); // 渡されるのは読み込んだCSVデータ
+    //   }
   }
 
   // 読み込んだCSVデータを二次元配列に変換する関数convertCSVtoArray()の定義
