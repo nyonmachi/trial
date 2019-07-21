@@ -30,7 +30,7 @@
 
   const btn = document.getElementById('btn');
   btn.addEventListener('click',()=>{
-    console.log('on4');
+    console.log('on5');
     getData();
   });
 
