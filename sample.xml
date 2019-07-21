@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <item>
+    <name>ぺんぎん</name>
+    <height>120</height>
+    <weight>6.4</weight>
+  </item>
+  <item>
+    <name>にわとり</name>
+    <height>32</height>
+    <weight>2.8</weight>
+  </item>
+</items>
