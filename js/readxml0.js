@@ -25,11 +25,12 @@
     xmlhttp.open('GET','sample.xml');
     xmlhttp.send();
   }
+  }
 }
 
   const btn = document.getElementById('btn');
   btn.addEventListener('click',()=>{
-    console.log('on');
+    console.log('on3');
     // getData();
   });
 
