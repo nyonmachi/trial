@@ -8,7 +8,7 @@
 
     xmlhttp.onreadystatechange = function(){
       if( xmlhttp.readyStates != 4){
-        console.log('readyStates != 4');
+        console.log('readyStates != 40');
         return;
       }else{
         if( xmlhttp.status != 200){
