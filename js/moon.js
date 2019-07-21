@@ -2,7 +2,8 @@
 {
   function getData(){
     const xmlhttp = new XMLHttpRequest();
-    xmlhttp.open('GET','moon.xml');
+    // xmlhttp.open('GET','moon.xml');
+    xmlhttp.open('GET','http://labs.bitmeister.jp/ohakon/api/?mode=moon_age&year=2015&month=8&day=30');
     xmlhttp.send();
 
     xmlhttp.onreadystatechange = function(){
@@ -29,7 +30,7 @@
 
   const btn  = document.getElementById('btn');
   btn.addEventListener('click',()=>{
-    console.log('moon 3');
+    console.log('moon 4');
     getData();
   });
 
