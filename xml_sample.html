@@ -6,7 +6,7 @@
 </head>
 <body>
   <input id="Button_Get" type="button" value="取得"" />
-  <div>受信情報4</div>
+  <div>受信情報5</div>
   <div id="output"></div>
   
    <script type="text/javascript">
@@ -14,6 +14,9 @@
  {
     function getData() {
       var xmlhttp = new XMLHttpRequest();
+                                 
+      xmlhttp.open("GET", "sample.xml");
+      xmlhttp.send();
 
       xmlhttp.onreadystatechange = function () {
         if (xmlhttp.readyState == 4) {
@@ -42,8 +45,7 @@
           }
         }
       }
-      xmlhttp.open("GET", "sample.xml");
-      xmlhttp.send();
+
     }
    
    const btn = document.getElementById('Button_Get');
