@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <title></title>
-
-  <script type="text/javascript">
+</head>
+<body>
+  <input id="Button_Get" type="button" value="取得"" />
+  <div>受信情報</div>
+  <div id="output"></div>
+  
+   <script type="text/javascript">
     function getData() {
       var xmlhttp = new XMLHttpRequest();
 
@@ -38,11 +43,12 @@
       xmlhttp.open("GET", "sample.xml");
       xmlhttp.send();
     }
+   
+   const btn = document.getElementById('Button_Get');
+   btn.addEventListener('click',()=>{
+    getData();
+  });
+
   </script>
-</head>
-<body>
-  <input id="Button_Get" type="button" value="取得" onclick="getData();" />
-  <div>受信情報</div>
-  <div id="output"></div>
 </body>
 </html>
