@@ -3,11 +3,11 @@
 
 //https://www.ipentec.com/document/javascript-xml-parsing
 function getData() {
-  var xmlhttp = new XMLHttpRequest();
+  const xmlhttp = new XMLHttpRequest();
 
   xmlhttp.onreadystatechange = function () {
-    if (xmlhttp.readyState == 4) {
-      if (xmlhttp.status == 200) {
+    if (xmlhttp.readyState === 4) {
+      if (xmlhttp.status === 200) {
         var elem = document.getElementById("output");
 
         elem.innerHTML += "----- getElementsByTagName -----<br/>";
@@ -38,7 +38,7 @@ function getData() {
 
   const btn = document.getElementById('btn');
   btn.addEventListener('click',()=>{
-    console.log('on1');
+    console.log('on2');
     getData();
   });
 
