@@ -5,8 +5,6 @@
   function getData(){
     const xmlhttp = new XMLHttpRequest();
 
-    xmlhttp.open('GET','sample.xml');
-    xmlhttp.send();
 
     xmlhttp.onreadystatechange = function(){
       if( xmlhttp.readyStates != 4){
@@ -29,6 +27,10 @@
         output.innerHTML =  output.innerHTML + name[i].tagName + ':' + name[i].textContent + '<br>';
       }
     }
+    
+    
+    xmlhttp.open('GET','sample.xml');
+    xmlhttp.send();
   }
 
   const btn = document.getElementById('btn');
