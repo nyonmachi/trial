@@ -10,6 +10,8 @@
         if(xmlhttp.status === 200 ){
 
 
+          const xmlData = xmlhttp.responseXML.documentElement;
+          console.log(xmlData);
 
         }// status
       }else{
@@ -21,7 +23,7 @@
 
   const btn  = document.getElementById('btn');
   btn.addEventListener('click',()=>{
-    console.log('moon 1');
+    console.log('moon 2');
     getData();
   });
 
