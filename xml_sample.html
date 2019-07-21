@@ -6,10 +6,12 @@
 </head>
 <body>
   <input id="Button_Get" type="button" value="取得"" />
-  <div>受信情報1</div>
+  <div>受信情報2</div>
   <div id="output"></div>
   
    <script type="text/javascript">
+   'use strict;
+ {
     function getData() {
       var xmlhttp = new XMLHttpRequest();
 
@@ -48,7 +50,7 @@
    btn.addEventListener('click',()=>{
     getData();
   });
-
+}
   </script>
 </body>
 </html>
