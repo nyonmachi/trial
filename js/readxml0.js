@@ -14,11 +14,11 @@
 
       console.log('readyStates OK');
       // const output = document.getElementById('output');
-      let innerHTML;
+      // let innerHTML;
       const docelem = xmlhttp.responseXML.documentElement;
       const name = docelem.getElementsByTagName('name');
       for(let i=0 ; i<name.length ; i++){
-        output.innerHTML =  output.innerHTML + name[i].tagName + ':' + name[i].textContent + '<br>';
+        elem.innerHTML =  elem.innerHTML + name[i].tagName + ':' + name[i].textContent + '<br>';
       }
     }
 
@@ -30,7 +30,7 @@
 
   const btn = document.getElementById('btn');
   btn.addEventListener('click',()=>{
-    console.log('on3');
+    console.log('on4');
     // getData();
   });
 
