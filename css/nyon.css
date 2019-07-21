@@ -1,0 +1,68 @@
+body{
+  background: #fff4f4;
+}
+
+.container{
+  position: relative;
+  margin-top: 20px;
+}
+#main{
+  position: relative;
+  top:0;
+  left:0;
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+#canvas{
+border-radius: 20px;
+  /* margin: 20px 20px; */
+  background: pink;
+}
+
+#sub{
+  position: relative;
+  top:-400px;
+  /* left:0; */
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+}
+#msg{
+  position: relative;
+  top:-400px;
+  /* left:0; */
+  width: 400px;
+  height: 140px;
+  margin: 20px auto;
+  /* background: #fff; */
+  background: radial-gradient(circle at top left, red 50px, yellow 70px, skyblue 100px);
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: ease-in-out 1s;
+  transform-style: preserve-3d;
+}
+/* #msg:hover{
+  transform: rotateY(180deg);
+} */
+#msg.back{
+  transform: rotateY(180deg);
+}
+.msgbox{
+  display: flex;
+  align-items: center;
+  width: 360px;
+  height: 100px;
+  vertical-align: middle;
+  position: absolute;
+  background: #fff;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  /* top:20px; */
+}
+#back{
+  transform: rotateY(180deg);
+}
