@@ -9,13 +9,19 @@
       if(xmlhttp.readyState === 4){
         if(xmlhttp.status === 200 ){
 
-
           const xmlData = xmlhttp.responseXML.documentElement;
           console.log(xmlData);
 
+          const output = document.getElementById('output');
+          const nodes= xmlData.getElementsByTagName('moon_age');
+
+          for(let i=0;i < nodes.length ; i++){
+            output.innerHTML = output.innerHTML + nodes[i].tagName +
+              ':' + nodes[i].textContent;
+          }
+
+
         }// status
-      }else{
-        alert('readyState wrong')
       }//xmlhttp.readyState
     }// function() {
 
@@ -23,7 +29,7 @@
 
   const btn  = document.getElementById('btn');
   btn.addEventListener('click',()=>{
-    console.log('moon 2');
+    console.log('moon 3');
     getData();
   });
 
