@@ -3,7 +3,7 @@
   const btn = document.getElementById('btn');
 
   function getData(){
-    const output = document.getElementById('ouput');
+    const output = document.getElementById('output');
     const xmlhttp = new XMLHttpRequest();
 
     xmlhttp.open('GET','moon2.xml');
