@@ -7,6 +7,7 @@
     const xmlhttp = new XMLHttpRequest();
 
     xmlhttp.open('GET','moon2.xml');
+    xmlhttp.open('GET','https://mgpn2.sakura.ne.jp/api/moon/position.cgi?y=2019&m=7&d=24&h=12&lat=35.6581&lon=139.7414');
     xmlhttp.send();
 
     xmlhttp.onreadystatechange = function(){
