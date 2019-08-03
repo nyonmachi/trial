@@ -1,0 +1,39 @@
+body{
+  font-family: Verdana,sans-serif;
+}
+.container{
+  width: 500px;
+  margin: 10px auto;
+}
+canvas{
+  display: block;
+  border: solid 2px #ddd;
+}
+
+ul{
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: nowrap;
+  list-style: none;
+  padding: 0;
+}
+
+li{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+}
+
+#btns, #proposal{
+  display: flex;
+  justify-content: center;
+}
+.btn{
+  width: 200px;
+  padding: 5px;
+  margin: 0;
+}
+#btns.hide,#proposal.hide,#paletto.hide{
+  display: none;
+}
