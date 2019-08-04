@@ -16,6 +16,7 @@ ul{
   flex-wrap: nowrap;
   list-style: none;
   padding: 0;
+  margin: 5px 0;
 }
 
 li{
@@ -23,6 +24,11 @@ li{
   height: 50px;
   text-align: center;
   line-height: 50px;
+}
+input{
+  height: 50px;
+  padding: 0 auto;
+  margin: 0;
 }
 
 #btns, #proposal{
@@ -36,4 +42,10 @@ li{
 }
 #btns.hide,#proposal.hide,#paletto.hide{
   display: none;
+}
+
+#gallery img{
+  margin-right: 5px;;
+  width: 95px;
+  height: 95px;
 }
