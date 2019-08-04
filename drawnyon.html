@@ -8,8 +8,9 @@
   <body>
     <div class="container">
       <canvas id="canvas" width="500" height="500"></canvas>
-      <ul id="paletto" class="hide">
-          <li style="background:dimgray"><input type="radio" name="sColor" value="dimgray"></li>
+      <form id="paletto" class="hide">
+        <ul >
+          <li style="background:dimgray"><input type="radio" name="sColor" value="dimgray" checked></li>
           <li style="background:deepskyblue"><input type="radio" name="sColor" value="deepskyblue"></li>
           <li style="background:lightsteelblue"><input type="radio" name="sColor" value="lightsteelblue"></li>
           <li style="background:darkgreen"><input type="radio" name="sColor" value="darkgreen"></li>
@@ -22,16 +23,17 @@
           <li style="background:lightcoral"><input type="radio" name="sColor" value="lightcoral"></li>
           <li style="background:navajowhite"><input type="radio" name="sColor" value="navajowhite"></li>
           <li style="background:gold"><input type="radio" name="sColor" value="gold"></li>
-      </ul>
-      <div id="btns">
+        </ul>
+      </form>
+      <div id="btns" class="hide">
         <button id="reset" class="btn">もう１回描いてみる</button>
-        <button id="download" class="btn">画像として保存★</button>
+        <!-- <button id="download" class="btn">ギャラリーに追加★</button> -->
       </div>
       <div id="proposal" class="hide">
         <button id="rabbit" class="btn">うさぎを連れてくる♪</button>
         <button id="replay" class="btn">もう１回見る</button>
       </div>
-      <a href="img/sakura1.png" download="icon">sakura</a>
+    <div id="gallery"></div>
     </div>
     <script src="js/nyonarr.js"></script>
     <script src="js/drawnyon.js">
