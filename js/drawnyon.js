@@ -7,9 +7,6 @@
   const paletto = document.getElementById('paletto');
   const btns = document.getElementById('btns');
   const reset = document.getElementById('reset');
-  const download = document.getElementById('download');
-
-
   const img = new Image();
 
   let flg = true;
@@ -21,9 +18,10 @@
     '『はなさか』にょんちゃんです (^_^)/',
     'あきこさんのところにはうさぎがいるの？',
     'ぼくはうさぎを見たことないよ。。',
-    'ねえ、ぼくのとこにうさぎを連れてきて♪ *^^*',
+    'うさぎ見たいなぁ、ねえ、連れてきて！ *^^*',
     'うさぎ、楽しみにしてるね！！',
   ];
+
 
   function init(){
     if(typeof canvas.getContext === 'undefined'){
@@ -31,7 +29,28 @@
       return;
     }
     ctx = canvas.getContext('2d');
+
   }//init
+
+
+  reset.addEventListener('click',()=>{
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const backarea = new BackArea();
+    for(let i = 0; i < nyon.length ;i++){
+      draw_for(i,0,0);
+    } //for
+
+    ctx.stroke();
+
+    ma_arr.forEach((item)=>{
+      img.src= 'img/ma'+ item[3] + '.png';
+      ctx.drawImage(img,item[0],item[1],item[2],item[2]);
+    });
+
+    draw();
+  });
+
+
 
   replay.addEventListener('click',()=>{
     counter=1;
@@ -43,20 +62,22 @@
     btns.classList.remove('hide');
     paletto.classList.remove('hide');
 
+    reset.click();
+    // draw();
+
   });
 
-  download.addEventListener('click',()=>{
-    console.log(canvas.toDataURL());
-  });
 
   function draw () {
     if(!flg){return;}
+
     const rect = canvas.getBoundingClientRect();
 
     canvas.addEventListener('mousedown',(e)=>{
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       isDrawing = true;
+      ctx.strokeStyle = paletto.sColor.value;
       ctx.beginPath();
       ctx.moveTo(x,y);
     });
@@ -86,26 +107,37 @@
     return Math.floor(Math.random()*(max-min)+1)+min;
   }
 
+  let angle;
+  let c;
+  let moveCount;
+  let ma_arr =[];
+  let msgCount;
 
-
-  let MX = 230;
-  let MY = 400;
-  let angle = 0;
-  let c = 0.05;
-  let moveCount = 0;
-  let ma_arr = [[250,350,50,1]];
-  let msgCount=0;
+  function soon_init(){
+    c = 0.05;
+    moveCount = 0;
+    ma_arr = [[250,350,50,1]];
+    angle = 0;
+    msgCount=0;
+  }
 
   function nyon_draw_soon(){
+    const MX = 230;
+    const MY = 400;
+
+
     if(moveflg === false){
       console.log('nyon stop');
       clearTimeout(timerId);
       return;
     }
 
+
     ctx.clearRect(0,0,canvas.width,canvas.height);
     const backarea = new BackArea();
 
+    img.src = 'img/sakura1.png';
+    ctx.drawImage(img,100,100);
     //お花作成
     ma_arr.forEach((item)=>{
       img.src= 'img/ma'+ item[3] + '.png';
@@ -117,12 +149,12 @@
     ctx.font = "22px 'ＭＳ ゴシック'";
     ctx.fillText(msg_arr[msgCount],480,50);
 
+
     ctx.save();
 
     ctx.translate(MX,MY);
     angle = angle + c;
     ctx.rotate(angle/180*Math.PI);
-
 
     if(Math.abs(angle) > 2){
       //お花配列作成
@@ -130,6 +162,8 @@
       c*=-1;
       moveCount++;
       if(moveCount%3===0 && msgCount < (msg_arr.length-1)){msgCount++;}
+      if(msgCount >= msg_arr.length-1){
+      }
     }
 
     for(let i = 0; i < nyon.length ;i++){
@@ -139,9 +173,10 @@
     ctx.stroke();
     ctx.restore();
 
-    if(moveCount>20){
+    if(moveCount>18){
       console.log('nyon stop');
       clearTimeout(timerId);
+      proposal.classList.remove('hide');
       return;
     }
 
@@ -155,8 +190,6 @@
     ctx.clearRect(0,0,canvas.width,canvas.height);
     const backarea = new BackArea();
 
-    return;
-
     let i;
     for(i = 0; i<10*counter && i < nyon.length ;i++){
       draw_for(i,0,0);
@@ -168,13 +201,14 @@
     if(i>=nyon.length) {
       clearTimeout(timerId);
       moveflg = true;
-      // nyon_draw_soon();
+      soon_init();
+      nyon_draw_soon();
       return;
     }
     timerId = setTimeout(nyon_draw_timer,20);
   } //nyon_draw_timer()
 
-  function draw_for(i,MX,MY) {
+  function draw_for(i,_mx,_my) {
 
     if(nyon[i][0] === -2){
       ctx.stroke();
@@ -190,13 +224,12 @@
       ( Math.abs(nyon[i][0]-nyon[i-1][0]) >2 && Math.abs(nyon[i][1]-nyon[i-1][1])>2 )){
       ctx.stroke();
       ctx.beginPath();
-      ctx.moveTo(nyon[i][0]-MX,nyon[i][1]-MY);
+      ctx.moveTo(nyon[i][0]-_mx,nyon[i][1]-_my);
     }else if (nyon[i][0] > 0){
-      ctx.lineTo(nyon[i][0]-MX,nyon[i][1]-MY);
+      ctx.lineTo(nyon[i][0]-_mx,nyon[i][1]-_my);
     }
 
   }
-
 
 
   const BackArea = function(){
@@ -222,6 +255,4 @@
   };
 
   init();
-  // const ball = new BackArea();
-  // draw();
   nyon_draw_timer();
