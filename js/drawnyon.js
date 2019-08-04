@@ -136,8 +136,6 @@
     ctx.clearRect(0,0,canvas.width,canvas.height);
     const backarea = new BackArea();
 
-    img.src = 'img/sakura1.png';
-    ctx.drawImage(img,100,100);
     //お花作成
     ma_arr.forEach((item)=>{
       img.src= 'img/ma'+ item[3] + '.png';
