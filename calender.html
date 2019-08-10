@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>日記を描いてみよう</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="css/calender.css">
+    <style>
+
+      .slider{
+        width:500px;
+        margin: 0 auto;
+      }
+      .slick-slide {
+        margin: 0px 20px;
+      }
+      .slick-slide img {
+        width: 90%;
+        margin: 0 auto;
+      }
+      .slick-prev:before,
+      .slick-next:before {
+          color: black;
+      }
+    </style>
+
+  </head>
+  <body>
+    <header clsss="">
+      <div id="headimg" class="container  text-center my-3">
+        <img src="" alt="flickrの画像" id="flickr" width="250" height="150">
+        <img src="img/white.png" alt="flickrの画像" id="dami" width="250" height="150" class="fadein">
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="container text-center">
+          カレンダー
+          <div id="calender" class="">
+            <div class="theader">
+              <a href="#" id="prev">＜＜</a>
+              <pre id="ym"></pre>
+              <a href="#" id="next">＞＞</a>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-danger">日</th>
+                  <th>月</th>
+                  <th>火</th>
+                  <th>水</th>
+                  <th>木</th>
+                  <th>金</th>
+                  <th class="text-primary">土</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+            <button id="btn" type="button" class="btn btn-light" name="button">今日</button>
+          </div>
+        </div>
+      </section>
+      <section class="bg-light">
+        <div class="container">
+          <p class="text-center pt-3" id="diary_date">日付</p>
+          <div id="diary" class="input-group input-group-sm mb-3">
+            <input id="title" type="text" width="300" class="d-block form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+            <textarea id="contents" name="name" rows="8" cols="50" class="my-1 p-2"></textarea>
+            <button id="savebtn" type="button" name="button" class="mt-1 mb-3 font-italic">保存</button>
+
+          </div>
+        </div>
+      </section>
+      </div>
+    </main>
+    <footer class="container" >
+    </footer>
+      <div id="foxes" class="slider">
+        <div>
+          <img src="img/white.png" width="100">
+        </div>
+        <div>
+          <img src="img/white.png" width="100">
+        </div>
+        <div>
+          <img src="img/white.png" width="100">
+        </div>
+        <div>
+          <img src="img/white.png" width="100">
+        </div>
+        <div>
+          <img src="img/white.png" width="100">
+        </div>
+      </div>
+    <script src="js/calender.js"></script>
+    <!-- <script type="js/jquery-3.4.1.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script>
+    $(function() {
+      $("#foxes").slick({
+        dots: true, // スライダー切り替えのドット
+        infinite: true, // 無限にスクロールするか？
+        autoplay: false, // 自動再生するか？
+        accessibility: true, // 左右のボタンでスライダーを切り替えるか？
+        slidesToShow: 3,
+         slidesToScroll: 3
+      });
+    });
+    </script>
+  </body>
+</html>
