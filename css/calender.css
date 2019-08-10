@@ -1,0 +1,43 @@
+body{
+
+}
+
+#calender{
+  width:280px;
+  margin: 20px auto;
+}
+.theader{
+  display: flex;
+  justify-content: space-between;
+}
+#btn{
+  display: block;
+  margin: 0 auto;;
+}
+img.fadein{
+  opacity: 1;
+   transition: 1s ease-in-out;
+}
+img.fadeout{
+  opacity: 0;
+  transition: 1s ease-in-out;
+}
+
+#headimg{
+  position:relative;
+  height: 150px;
+  width: 250px;
+  margin: 0 auto;
+}
+img#dami{
+  display: block;
+  position: absolute;
+}
+img#flickr{
+  display: block;
+  position: absolute;
+}
+#diary{
+  width:280px;
+  margin: 20px auto;
+}
