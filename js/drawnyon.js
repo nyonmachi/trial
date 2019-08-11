@@ -77,6 +77,11 @@
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       isDrawing = true;
+      if(paletto.sColor.value==='white'){
+        ctx.lineWidth = 3;
+      }else{
+        ctx.lineWidth = 1;
+      }
       ctx.strokeStyle = paletto.sColor.value;
       ctx.beginPath();
       ctx.moveTo(x,y);
