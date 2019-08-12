@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>残暑御見舞い</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/try2.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="msg">な</div>
+        <div class="msg">つ</div>
+        <div class="msg">の</div>
+        <div class="msg">お</div>
+        <div class="msg">た</div>
+        <div class="msg">よ</div>
+        <div class="msg">り</div>
+      </div>
+      <div class="greeting">
+        <p class="text">残暑御見舞い申し上げます。2019.8</p>
+        <p class="fukidashi">元気にしてますか～？</p>
+      </div>
+    </header>
+    <main>
+
+      <div class="container">
+        <div class="box" style="background-image:url('img/himawari1.jpg')">
+          message from machiko
+        </div>
+        <div class="box" style="font-size:14px;">
+          姉ちゃん、こんにちは。<br><a href="https://voguegirl.jp/horoscope/shiitake2019-h2/" target="_blank">しいたけ占い</a>って知ってますか？
+          本屋で見かけて時間潰しに見てみたら、あまりにもあたっていてびっくり！
+          太陽星座だけを見る巷の占いなんて当てにならないと思っていたけど、見直しました　笑。
+          よかったら見てみて。何かの参考になるかも？<br>
+          それ以外は本当にせっせとプログラミングの勉強に励み、
+          夕方はにょんちゃんと新宿御苑にお散歩に行く日々。
+          でも楽しいです。具体的な夢が持てたことが有り難いです。<br><span style="color:#FFCC33;">★-★-★<span>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="box" style="background-image:url('img/himawari2.jpg')">
+          message from nyon
+        </div>
+        <div class="box">
+          あきこさん、こんにちは。<br>
+そちらにはとんぼはいますか？<br>
+新宿御苑には赤とんぼがたくさんいます。<br>
+みんなスイスイ飛んでいます。<br>
+気持ちよさそうです。<br>
+まちこは赤とんぼは秋の虫と思っていたようです。<br>
+東京の赤とんぼは気が早いのでしょうか？<br>
+<img src="img/tonbo1.png"  width="40">　<img src="img/tonbo2.png" width="30">　<img src="img/tonbo2.png" width="30">
+
+        </div>
+      </div>
+
+    </main>
+    <footer>
+      <div class="container">
+        <div class="photo">
+          <p>風が通るお気に入りの場所。毎日ここで夕涼みできたら最高です^^/</p>
+          <img src="img/nyon1.jpg" width="180" alt="">
+        </div>
+        <div class="photo">
+          <p>地面に座るのはカダラに良いそうです。<br>
+本当はまちこに抱っこされる方がぼくは好きです(*＾＾*)</p>
+          <img src="img/nyon2.jpg" width="180" alt="">
+        </div>
+        <div class="photo">
+          <p>夏はお花が少ないです。でも小さな白いお花が咲いていました。いい香りがします。クモも香りを嗅いでいました。</p>
+          <img src="img/nyon3.jpg" width="180" alt="">
+        </div>
+        <div class="photo">
+          <p>最近見つけた一番おいしそうなヤツ。でも痩せています。
+            秋になったらもっと太るでしょうか？</p>
+          <img src="img/nyon4.jpg" width="180" alt="">
+        </div>
+
+      </div>
+
+    </footer>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script>
+      'use strict';
+{
+
+  var boxArr= $('.box');
+  var msgArr = $('.msg');
+
+  console.log(boxArr[1]);
+  <!-- $(boxArr[0]).hide(); -->
+
+  for(let i = 0;i<msgArr.length ; i++){
+      $(msgArr[i]).show('explode','easeOutBounce' ,i===1 ? 400 : 100*i);
+  }
+
+  for(let i= 0; i< boxArr.length ; i++){
+    $(boxArr[i]).on('click',function(){
+      if(i%2===0){
+        $(boxArr[i]).hide();
+        $(boxArr[i+1]).show("fold",1000);
+      }else{
+        $(boxArr[i]).hide();
+        $(boxArr[i-1]).show("puff",1000);
+      }
+    });
+
+  }
+}
+    </script>
+  </body>
+</html>
