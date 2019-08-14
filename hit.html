@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>真夏の夜のお愉しみ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/hit.css">
+    <link rel="stylesheet" href="css/mori.css">
+  </head>
+  <body>
+    <span></span>
+    <header>
+      <div>
+        真夏は夜を愉しみに・・
+      </div><div id="hoshi">★</div>
+    </header>
+    <main>
+      <section>
+        <div class="hotaru">
+          <div class="night" id="night">
+            <div class="star fade" id="star1"></div>
+            <div id="lastmsg" >
+              この夏、ホタルに会いに行こう。
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <div class="container choice">
+          <div class="msg" id="quiz">
+            どの動物かわかりますか？<br>
+            間違えると動物は気を悪くして森に帰ってしまいますよ。
+            <hr>
+              <span>動物当てクイズにチャレンジ！</span>：
+              <input type="text" id="ani_name" placeholder="ひらがなで入力">
+              <div class="">
+              <button type="button" id="go">Go ahead!</button>
+              <button type="button" id="cancel">Cancel..</button>
+            </div>
+          </div>
+          <div class="msg" id="gonext">
+            お見事！すべて正解です！<br>
+            もっと見てみますか？<br>
+            森にはもっと面白い動物が潜んでいるかもしれません。
+            <!-- <hr> -->
+              <button type="button" id="gon">Go Next!</button>
+              <button type="button" id="canceln">Cancel..</button>
+            </div>
+            <div class="msg" id="fin" >
+              お見事！すべて正解です！<br>
+              引き続き、夏の夜を愉しんでくださいね！
+              <!-- <hr> -->
+                <button type="button" id="closebtn">Close★</button>
+              </div>
+          </div>
+        <div class="container qiuz_go">
+          ホタルの時期が終わってしまった、そんなあなたには、森の動物あてクイズはいかが？
+        </div>
+
+        <div class="container animal">
+          <div>
+            <img src="img/kitune.jpg" data-name="キツネ"><strong>キツネです。</strong><span></span>
+          </div>
+          <div>
+            <img src="img/sika.jpg" data-name="シカ"><strong>シカです。</strong><span></span>
+          </div>
+          <div>
+            <img src="img/neko.jpg" data-name="ネコ"><strong>ネコです。</strong><span></span>
+          </div>
+          <div>
+            <img src="img/usagi.jpg" data-name="ウサギ"><strong>ウサギです。</strong><span></span>
+          </div>
+          <div>
+            <img src="img/risu.jpg" data-name="リス"><strong>リスです。</strong><span></span>
+          </div>
+        </div>
+
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="js/hotaru.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/hit.js"></script>
+    <script src="js/header.js"></script>
+  </body>
+</html>
