@@ -1,0 +1,44 @@
+
+.hotaru{
+  /* background: midnightblue; */
+  background: rgba(25,25,112,0.9);
+  width: 620px;
+  height: 300px;
+  margin: 0 auto;
+  background-image: url('../img/hotaru.jpg');
+  background-size: cover;
+}
+.night{
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+.star{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background:transparent;
+  border:0;
+  top:40px;
+  /* box-shadow: -30px -30px 10px khaki; */
+  box-shadow: -20px -20px 10px khaki;
+}
+.fade{
+  transition: 1s;
+  transform: scale(0.5,0.5) translateY(2px);
+}
+#lastmsg{
+  color: white;
+  position:absolute;
+  top:250px;
+  right:0px;
+  font-size: 20px;
+  transform: scale(0.8,0.8);
+  opacity: 0;
+  transition: 5s;
+}
+#lastmsg.msg-fadein{
+  transform: scale(1,1);
+  opacity: 1;
+}
