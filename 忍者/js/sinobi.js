@@ -40,7 +40,7 @@
 
   }
 
-  // para();
+  para();
 
   $('#ninja').animate({
     opacity:0.5,
