@@ -20,7 +20,16 @@
       // $('.c_img img').attr('src','img/' + ('0'+i).slice(-2) +'.png');
       $c_img.eq(selectNum).attr('src','img/' + ('0'+i).slice(-2) +'.png');
       console.log(i);
-    })
+    });
+    $li.bind('touchend',function(){
+      clearTimeout(timer1);
+    });
+    $li.bind('touchstart',function(){
+        timer1 = setTimeout(function(){
+          $c_img.eq(selectNum).attr('src','img/' + ('0'+i).slice(-2) +'.png');
+          console.log(i);
+        });
+    });
   }
 
   $setLocal.on('click',()=>{
